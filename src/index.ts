@@ -13,6 +13,7 @@ export const emptyDefaults: EmptyOptions = {
   zero: false,
   false: false,
   falsy: false,
+  date: true,
 }
 
 /**
@@ -46,6 +47,8 @@ export function isEmpty(input: unknown, options: EmptyOptions = {}) {
       if (input.size === 0 && (!!opt.all || !!opt.map)) return true;
     } else if (input instanceof Set) {
       if (input.size === 0 && (!!opt.all || !!opt.set)) return true;
+    } else if (input instanceof Date) {
+      if (input.valueOf() === 0 && (!!opt.all || !!opt.date)) return true;
     } else if (typeof input === 'object') {
       if (input !== null && Object.keys(input).length === 0 && (!!opt.all || !!opt.object)) return true;
     }

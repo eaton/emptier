@@ -86,3 +86,16 @@ test('nan', t => {
   t.assert(isEmpty(NaN, { all: true }));
   t.assert(!isEmpty(NaN, { none: true }));
 });
+
+test('date', t => {
+  const zeroDate = new Date(0);
+  const nonZeroDate = new Date(Date.now());
+  
+  t.assert(!isEmpty(nonZeroDate));
+  t.assert(!isEmpty(nonZeroDate, { date: true }));
+  t.assert(!isEmpty(nonZeroDate, { date: false }));
+
+  t.assert(isEmpty(zeroDate));
+  t.assert(isEmpty(zeroDate, { date: true }));
+  t.assert(!isEmpty(zeroDate, { date: false }));
+});

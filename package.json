@@ -1,6 +1,6 @@
 {
   "name": "emptier",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A thorough, configurable, zero-dependency Javascript emptiness check.",
   "type": "module",
   "main": "./dist/index.cjs",

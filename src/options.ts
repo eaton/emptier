@@ -55,6 +55,13 @@ type EmptyOptionsByType = {
   array?: boolean,
 
   /**
+   * Treat zero-value dates (UTC 1970/01/01) as empty.
+   * 
+   * @defaultValue `true`
+   */
+  date?: boolean,
+
+  /**
    * Treat zero-length buffers as empty.
    * 
    * @defaultValue `true`
